@@ -1,0 +1,33 @@
+﻿<Window x:Class="BezierDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BezierDemo"
+        mc:Ignorable="d"
+        Title="贝塞尔曲线详解" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="0.5">
+            <StackPanel ButtonBase.Click="StackPanel_Click">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="Margin" Value="0,20,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Content="一阶贝塞尔" Tag="b1"/>
+                <Button Content="二阶贝塞尔" Tag="b2"/>
+                <Button Content="三阶贝塞尔" Tag="b3"/>
+                <Button Content="移动点" Tag="Move"/>
+                <Button Content="清空" Tag="Clear"/>
+            </StackPanel>
+        </Border>
+        <Canvas MouseMove="Grid_MouseMove" Background="Transparent" MouseDown="Grid_MouseDown" x:Name="grid" Grid.Column="1">
+            
+        </Canvas>
+    </Grid>
+</Window>
